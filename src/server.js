@@ -24,6 +24,7 @@ app.use(express.urlencoded({extended: false}));
 
 //Routes
 app.use(require('./routes/index.routes')); //Va a buscar las rutas en estos archivos
+app.use(require('./routes/notes.routes'))
 
 //Static Files - Son archivos que cualquier cliente puede ver.
 app.use(express.static(path.join(__dirname, 'public'))); //Se setea donde esta la carpeta "public" con el método especifico express.static
