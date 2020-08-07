@@ -10,7 +10,7 @@ notesCtrl.createNewNote = async (req, res) => {
     const {title, description} = req.body;
     const newNote = new Note({title, description});
     await newNote.save();
-    res.send('notes add');
+    res.redirect('/notes');
 };
 
 notesCtrl.renderNotes = async (req, res) => {
@@ -26,8 +26,9 @@ notesCtrl.updateNotes = (req, res) => {
     res.send('Update Notes')
 };
 
-notesCtrl.deleteNotes = (req, res) => {
-    res.send('Deleting notes')
+notesCtrl.deleteNote = async (req, res) => {
+    await Note.findByIdAndDelete(req.params.id);
+    res.redirect('/notes')
 };
 
 module.exports = notesCtrl; //Se importa en el notes.routes.js

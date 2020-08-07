@@ -7,7 +7,7 @@ const {
     renderNotes, 
     renderEditForm, 
     updateNotes, 
-    deleteNotes
+    deleteNote
 } = require('../controllers/notes.controllers');
 
 //New note
@@ -24,7 +24,7 @@ router.get('/notes/edit/:id', renderEditForm)
 router.put('/notes/edit/:id', updateNotes)
 
 //Delete Notes
-router.delete('/notes/delete/:id', deleteNotes)
+router.delete('/notes/delete/:id', deleteNote)
 
 
 module.exports = router; //Se usa en server.js. 
