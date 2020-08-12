@@ -41,7 +41,8 @@ app.use((req, res, next) => {
 
 //Routes
 app.use(require('./routes/index.routes')); //Va a buscar las rutas en estos archivos
-app.use(require('./routes/notes.routes'))
+app.use(require('./routes/notes.routes'));
+app.use(require('./routes/users.routes'));
 
 //Static Files - Son archivos que cualquier cliente puede ver.
 app.use(express.static(path.join(__dirname, 'public'))); //Se setea donde esta la carpeta "public" con el método especifico express.static
