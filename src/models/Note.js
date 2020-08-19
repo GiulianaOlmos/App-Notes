@@ -8,7 +8,11 @@ const NoteSchema = new Schema({
     description: {
         type: String,
         require: true,
-    }
+    },
+    user: {
+        type: String,
+        required: true,
+    },
 },{
     timestamps:true,
 })
